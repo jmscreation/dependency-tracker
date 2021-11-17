@@ -1,0 +1,18 @@
+#DEPENDENCIES
+
+| There are currently no dependencies in this file
+| The first line in this file is required and should not be removed as this denotes
+|  that the file is a valid dependency list
+
+| The format for a dependency is as follows:
+| (git-url) (branch)
+|
+| Example:
+>https://github.com/jmscreation/libpng		main
+|
+| Make sure you have at least 1 white-space or tabulation between the url
+|  and the branch target
+| For any project on github, make sure you .gitignore your library directory;
+|  otherwise you will have copies of the libraries in your repository
+| Comments can be added anywhere below the first line and can be delimited with
+|  any of the following characters: " < > |
