@@ -124,7 +124,7 @@ bool validateGit() {
     return true;
 }
 
-std::string readLine(std::ifstream& file) {
+std::string readLine(std::ifstream& file) { // returns a line with content, or false if eof
     if(!file.is_open()) return "";
     
     bool comment = false;
@@ -134,9 +134,9 @@ std::string readLine(std::ifstream& file) {
         if(!file.readsome(&c, 1)) break;
         if(c == '\r') continue; // windows return sequence
         if(c == '\n'){
+            if(!data.size()) continue;
             if(comment){
                 comment = false;
-                if(!data.size()) continue;
             }
             break;
         }
@@ -196,7 +196,7 @@ bool readDependency(Dependency& dep, std::ifstream& file) {
     if(!file.is_open()) return false;
 
     std::string line = readLine(file);
-    if(!line.size()) return false;
+    if(line.empty()) return false; // eof
     
     dep.url.clear();
     dep.branch.clear();
