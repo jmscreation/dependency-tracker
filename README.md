@@ -1,6 +1,6 @@
 # Project Dependency Tracker
 
- This program tracks and updates dependencies for and repository in this account that uses the new dependency standard.
+ This program tracks and updates dependencies for any repository in this account that uses the new dependency standard.
  
  
  
