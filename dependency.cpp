@@ -222,9 +222,12 @@ bool readDependency(Dependency& dep, std::ifstream& file) {
 
 std::vector<std::string> findDependencyFiles(const std::string& libdir, const std::string& filename) {
     std::vector<std::string> paths;
-    if(!fs::is_directory(fs::path(libdir))){
+    if(fs::is_regular_file(fs::path(libdir))){
         if(GlobalParameters::verboseLog) std::cout << "Library path is not valid: " << libdir << "\n";
         return {};
+    }
+    if(!fs::is_directory(fs::path(libdir))){
+        fs::create_directories(fs::path(libdir));
     }
 
     try {
@@ -278,9 +281,12 @@ void mergeDependencies(std::vector<Dependency>& dest, std::vector<Dependency>&& 
 }
 
 bool populateDependencyList(std::vector<Dependency>& dpList, const std::string& libdir, const std::string& depfname) {
+    if(fs::is_regular_file(fs::path(libdir))){
+        if(GlobalParameters::verboseLog) std::cout << "Library path is not valid: " << libdir << "\n";
+        return {};
+    }
     if(!fs::is_directory(fs::path(libdir))){
-        std::cout << "Invalid library directory: " << libdir << "\n";
-        return false; // library directory is invalid
+        fs::create_directories(fs::path(libdir));
     }
 
     std::string dir = fs::canonical(libdir).string();
