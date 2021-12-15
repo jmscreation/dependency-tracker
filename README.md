@@ -14,6 +14,18 @@
  Linux: `./build.sh`
  Windows: `.\build.bat`
  
+ # Installation
+ 
+ ## For Windows
+ 
+ Place *deps.exe* in a binary folder that has its path configured.
+ 
+ For example, you can install it in: `C:\buildtools\deps\deps.exe` then make sure "C:\buildtools\deps" is in your environment PATH.
+ 
+ ## For Linux
+ 
+ Place *deps* in `/usr/bin` to install
+ 
  # How to Run
  
  Please see the help information within the application for more information on how to track dependencies
