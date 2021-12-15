@@ -15,6 +15,7 @@
  Windows: `.\build.bat`
  
  # Installation
+ It is important you have `git` installed / and configured in your PATH. This program relies on the *git* command.
  
  ## For Windows
  
