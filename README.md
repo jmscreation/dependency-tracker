@@ -1,10 +1,10 @@
 # Project Dependency Tracker
 
- This program tracks and updates dependencies for any repository in this account that uses the new dependency standard.
+ This program tracks and updates dependencies for any repository in this account that uses the new library dependency standard.
  
  
  
- This simple-to-use applciation will automatically download and update all dependency repositories for any project that uses this organized dependency system.
+ This simple-to-use application will automatically download and update all dependency repositories for any project that uses this dependency system. Keep in mind that this application simply uses `git` to actually perform the download/update process. So you'll need git installed and configured. See below.
  
  
  # How To Build
